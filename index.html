@@ -1,13 +1,281 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nibras Jordan - Independent Power Producer</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="public/Logo-.png">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header" class="fixed-top">
+        <div class="container-fluid">
+            <div class="row align-items-center py-2">
+                <!-- Logo -->
+                <div class="col-auto">
+                    <img src="public/Logo-.png" alt="Nibras Power" class="logo" onclick="navigateTo('home')">
+                </div>
+                
+                <!-- Top Bar -->
+                <div class="col">
+                    <div class="d-flex flex-column">
+                        <!-- Language Toggle Row -->
+                        <div class="d-flex justify-content-end align-items-center py-2 border-bottom">
+                            <button id="languageToggle" class="btn btn-primary btn-sm d-flex align-items-center">
+                                <i class="bi bi-globe me-2"></i>
+                                <span id="languageText">العربية</span>
+                            </button>
+                        </div>
+                        
+                        <!-- Navigation Row -->
+                        <div class="d-flex justify-content-between align-items-center py-2">
+                            <!-- Desktop Navigation -->
+                            <nav class="d-none d-lg-flex">
+                                <ul class="nav nav-pills">
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                            <span data-en="ABOUT US" data-ar="من نحن">ABOUT US</span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#" onclick="navigateTo('about-mission-vision-values')">
+                                                <span data-en="Mission, Vision and Values" data-ar="المهمة والرؤية والقيم">Mission, Vision and Values</span>
+                                            </a></li>
+                                            <li><a class="dropdown-item" href="#" onclick="navigateTo('about-ownership')">
+                                                <span data-en="Ownership" data-ar="الملكية">Ownership</span>
+                                            </a></li>
+                                            <li><a class="dropdown-item" href="#" onclick="navigateTo('about-leadership')">
+                                                <span data-en="Our Leadership" data-ar="قيادتنا">Our Leadership</span>
+                                            </a></li>
+                                            <li><a class="dropdown-item" href="#" onclick="navigateTo('about-ethics-compliance')">
+                                                <span data-en="Ethics and Compliance" data-ar="الأخلاق والامتثال">Ethics and Compliance</span>
+                                            </a></li>
+                                            <li><a class="dropdown-item" href="#" onclick="navigateTo('about-awards-recognitions')">
+                                                <span data-en="Awards and Recognitions" data-ar="الجوائز والتقديرات">Awards and Recognitions</span>
+                                            </a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                            <span data-en="SUSTAINABILITY" data-ar="الاستدامة">SUSTAINABILITY</span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#" onclick="navigateTo('sustainability-safety')">
+                                                <span data-en="Safety First" data-ar="السلامة أولاً">Safety First</span>
+                                            </a></li>
+                                            <li><a class="dropdown-item" href="#" onclick="navigateTo('sustainability-environment')">
+                                                <span data-en="Environmental Protection" data-ar="حماية البيئة">Environmental Protection</span>
+                                            </a></li>
+                                            <li><a class="dropdown-item" href="#" onclick="navigateTo('sustainability-social')">
+                                                <span data-en="Social Responsibility" data-ar="المسؤولية الاجتماعية">Social Responsibility</span>
+                                            </a></li>
+                                            <li><a class="dropdown-item" href="#" onclick="navigateTo('sustainability-stakeholder')">
+                                                <span data-en="Stakeholder Relations" data-ar="علاقات أصحاب المصلحة">Stakeholder Relations</span>
+                                            </a></li>
+                                            <li><a class="dropdown-item" href="#" onclick="navigateTo('sustainability-assets')">
+                                                <span data-en="Asset Management" data-ar="إدارة الأصول">Asset Management</span>
+                                            </a></li>
+                                            <li><a class="dropdown-item" href="#" onclick="navigateTo('sustainability-supply')">
+                                                <span data-en="Supply Chain Management" data-ar="إدارة سلسلة التوريد">Supply Chain Management</span>
+                                            </a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                            <span data-en="OUR BUSINESS" data-ar="أعمالنا">OUR BUSINESS</span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#" onclick="navigateTo('business-aes-jordan-ipp1')">
+                                                <span data-en="AES Jordan PSC (IPP1)" data-ar="شركة AES الأردن (IPP1)">AES Jordan PSC (IPP1)</span>
+                                            </a></li>
+                                            <li><a class="dropdown-item" href="#" onclick="navigateTo('business-aes-levant-ipp4')">
+                                                <span data-en="AES Levant Holdings BV (IPP4)" data-ar="شركة AES بلاد الشام (IPP4)">AES Levant Holdings BV (IPP4)</span>
+                                            </a></li>
+                                            <li><a class="dropdown-item" href="#" onclick="navigateTo('business-am-solar')">
+                                                <span data-en="AM Solar" data-ar="AM الطاقة الشمسية">AM Solar</span>
+                                            </a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#" onclick="navigateTo('careers')">
+                                            <span data-en="CAREERS" data-ar="الوظائف">CAREERS</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#" onclick="navigateTo('news')">
+                                            <span data-en="NEWS" data-ar="الأخبار">NEWS</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#" onclick="navigateTo('contact')">
+                                            <span data-en="CONTACT US" data-ar="اتصل بنا">CONTACT US</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            
+                            <!-- Search Button -->
+                            <button id="searchToggle" class="btn btn-outline-primary d-none d-lg-flex align-items-center">
+                                <i class="bi bi-search me-2"></i>
+                                <span data-en="Search" data-ar="بحث">Search</span>
+                            </button>
+                            
+                            <!-- Mobile Menu Button -->
+                            <button class="btn btn-outline-primary d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+                                <i class="bi bi-list"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Offcanvas -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header bg-primary text-white">
+            <img src="public/Logo-.png" alt="Nibras Power" class="logo-mobile">
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <nav class="nav flex-column">
+                <a class="nav-link" href="#" onclick="navigateTo('about')" data-bs-dismiss="offcanvas">
+                    <span data-en="About Us" data-ar="من نحن">About Us</span>
+                </a>
+                <a class="nav-link" href="#" onclick="navigateTo('sustainability-main')" data-bs-dismiss="offcanvas">
+                    <span data-en="Sustainability" data-ar="الاستدامة">Sustainability</span>
+                </a>
+                <a class="nav-link" href="#" onclick="navigateTo('business')" data-bs-dismiss="offcanvas">
+                    <span data-en="Our Business" data-ar="أعمالنا">Our Business</span>
+                </a>
+                <a class="nav-link" href="#" onclick="navigateTo('careers')" data-bs-dismiss="offcanvas">
+                    <span data-en="Careers" data-ar="الوظائف">Careers</span>
+                </a>
+                <a class="nav-link" href="#" onclick="navigateTo('news')" data-bs-dismiss="offcanvas">
+                    <span data-en="News" data-ar="الأخبار">News</span>
+                </a>
+                <a class="nav-link" href="#" onclick="navigateTo('contact')" data-bs-dismiss="offcanvas">
+                    <span data-en="Contact Us" data-ar="اتصل بنا">Contact Us</span>
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="mainContent">
+        <!-- Home Page Content will be loaded here -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <img src="public/Logo-.png" alt="Nibras Power" class="logo-footer mb-3">
+                    <p class="text-light" data-en="Nibras Power Jordan – Delivering reliable, efficient power generation to support Jordan's growth." data-ar="نبراس باور الأردن - توفير توليد طاقة موثوق وفعال لدعم نمو الأردن.">
+                        Nibras Power Jordan – Delivering reliable, efficient power generation to support Jordan's growth.
+                    </p>
+                    <div class="contact-info">
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="bi bi-geo-alt text-primary me-2"></i>
+                            <span data-en="Amman, Jordan" data-ar="عمان، الأردن">Amman, Jordan</span>
+                        </div>
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="bi bi-telephone text-primary me-2"></i>
+                            <span>+974 4000 0000</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-envelope text-primary me-2"></i>
+                            <span>info@nibraspower.com</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 data-en="Company" data-ar="الشركة">Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" onclick="navigateTo('about')" class="text-light text-decoration-none">
+                            <span data-en="About Us" data-ar="من نحن">About Us</span>
+                        </a></li>
+                        <li><a href="#" onclick="navigateTo('business')" class="text-light text-decoration-none">
+                            <span data-en="Our Business" data-ar="أعمالنا">Our Business</span>
+                        </a></li>
+                        <li><a href="#" onclick="navigateTo('careers')" class="text-light text-decoration-none">
+                            <span data-en="Careers" data-ar="الوظائف">Careers</span>
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 data-en="Services" data-ar="الخدمات">Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" onclick="navigateTo('business')" class="text-light text-decoration-none">
+                            <span data-en="Asset Management" data-ar="إدارة الأصول">Asset Management</span>
+                        </a></li>
+                        <li><a href="#" onclick="navigateTo('business')" class="text-light text-decoration-none">
+                            <span data-en="Project Development" data-ar="تطوير المشاريع">Project Development</span>
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 data-en="Sustainability" data-ar="الاستدامة">Sustainability</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" onclick="navigateTo('sustainability-environment')" class="text-light text-decoration-none">
+                            <span data-en="Environmental Impact" data-ar="التأثير البيئي">Environmental Impact</span>
+                        </a></li>
+                        <li><a href="#" onclick="navigateTo('sustainability-social')" class="text-light text-decoration-none">
+                            <span data-en="Community Programs" data-ar="البرامج المجتمعية">Community Programs</span>
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <div class="d-flex justify-content-center mb-3">
+                        <a href="#" class="text-light me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-light me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-light me-3"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="my-4">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0 text-muted">
+                        © <span id="currentYear"></span> 
+                        <span data-en="Nibras Power Jordan. All rights reserved." data-ar="نبراس باور الأردن. جميع الحقوق محفوظة.">
+                            Nibras Power Jordan. All rights reserved.
+                        </span>
+                    </p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-muted text-decoration-none me-3">
+                        <span data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</span>
+                    </a>
+                    <a href="#" class="text-muted text-decoration-none">
+                        <span data-en="Terms & Conditions" data-ar="الشروط والأحكام">Terms & Conditions</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script src="js/pages.js"></script>
+    <script src="js/language.js"></script>
+</body>
 </html>
